@@ -47,7 +47,7 @@ class AlaiaApp {
                 
                 item.innerHTML = `
                     <div class="collection-square" style="background-color: ${collection.color}"></div>
-                    <span class="collection-label">${collection.shortName}</span>
+                    <span class="collection-label">collection<br>${collection.name}</span>
                 `;
                 
                 item.addEventListener('click', () => this.selectCollection(collection));
