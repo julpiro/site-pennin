@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALAÏA — AI Creative Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- STEP 1: Homepage -->
+    <div id="home-screen" class="screen active">
+        <header class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Ala%C3%AFa_logo.svg/2560px-Ala%C3%AFa_logo.svg.png" alt="ALAÏA" class="logo">
+        </header>
+        
+        <!-- Collection Navigation Bar -->
+        <div class="collection-nav" id="collection-nav-home">
+            <!-- Will be populated by JS -->
+        </div>
+        
+        <main class="home-content">
+            <div class="intro-text">
+                <p class="intro-title">SELECT A SQUARE TO CHOOSE A COLLECTION</p>
+                <p class="intro-description">
+                    This project introduces an AI tool developed 
+                    for Maison Alaïa, designed to support creative research 
+                    and exploration. We collected every runway look from 
+                    Alaïa's archives up until October 2026, allowing the 
+                    system to study the brand's evolving forms, materials, 
+                    and silhouettes. From this foundation, the AI can generate 
+                    new collections, guided by selected themes or moods. It 
+                    becomes a space for experimentation where data meets 
+                    design, and where Alaïa's identity continues to evolve 
+                    through new creative interpretations.
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <!-- STEP 2 & 3: Collection View - Select an image from collection -->
+    <div id="collection-screen" class="screen">
+        <header class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Ala%C3%AFa_logo.svg/2560px-Ala%C3%AFa_logo.svg.png" alt="ALAÏA" class="logo">
+        </header>
+        
+        <div class="collection-nav" id="collection-nav-collection">
+            <!-- Will be populated by JS -->
+        </div>
+        
+        <main class="collection-content">
+            <div class="collection-header">
+                <div class="collection-indicator" id="collection-indicator"></div>
+                <span class="collection-title" id="collection-title"></span>
+            </div>
+            <div class="looks-grid" id="looks-grid">
+                <!-- Will be populated by JS -->
+            </div>
+            <button class="back-btn" id="back-from-collection">← Back to Home</button>
+        </main>
+    </div>
+
+    <!-- STEP 4: Theme Selection - Click a theme square -->
+    <div id="theme-select-screen" class="screen">
+        <header class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Ala%C3%AFa_logo.svg/2560px-Ala%C3%AFa_logo.svg.png" alt="ALAÏA" class="logo">
+        </header>
+        
+        <div class="theme-nav" id="theme-nav">
+            <!-- Will be populated by JS -->
+        </div>
+        
+        <main class="theme-select-content">
+            <div class="selected-look-preview">
+                <img src="" alt="Selected Look" id="selected-look-preview-img">
+                <p class="preview-label">Selected Archive Look</p>
+            </div>
+            <div class="theme-instruction">
+                <p class="intro-title">SELECT A THEME</p>
+                <p class="intro-description">Choose a mood to inspire your new creation.</p>
+            </div>
+            <button class="back-btn" id="back-from-theme-select">← Back to Collection</button>
+        </main>
+    </div>
+
+    <!-- STEP 5: Theme Images - Select an image from theme -->
+    <div id="theme-images-screen" class="screen">
+        <header class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Ala%C3%AFa_logo.svg/2560px-Ala%C3%AFa_logo.svg.png" alt="ALAÏA" class="logo">
+        </header>
+        
+        <div class="theme-nav" id="theme-nav-images">
+            <!-- Will be populated by JS -->
+        </div>
+        
+        <main class="theme-images-content">
+            <div class="theme-header">
+                <div class="theme-indicator" id="theme-indicator"></div>
+                <span class="theme-title" id="theme-title"></span>
+            </div>
+            <div class="theme-grid" id="theme-images-grid">
+                <!-- Will be populated by JS -->
+            </div>
+            <button class="back-btn" id="back-from-theme-images">← Back to Themes</button>
+        </main>
+    </div>
+
+    <!-- STEP 6: Result Screen -->
+    <div id="result-screen" class="screen">
+        <header class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Ala%C3%AFa_logo.svg/2560px-Ala%C3%AFa_logo.svg.png" alt="ALAÏA" class="logo">
+        </header>
+        
+        <div class="collection-nav" id="collection-nav-result">
+            <!-- Will be populated by JS -->
+        </div>
+        
+        <main class="result-content">
+            <div class="result-grid">
+                <!-- Archive/Collection Image -->
+                <div class="result-column">
+                    <div class="result-image" id="archive-image">
+                        <img src="" alt="Archive Look" id="archive-img">
+                    </div>
+                    <div class="result-label">
+                        <span class="label-title">ARCHIVE :</span>
+                        <span class="label-value" id="archive-label"></span>
+                    </div>
+                </div>
+                
+                <!-- Theme/Mood Image -->
+                <div class="result-column">
+                    <div class="result-image" id="theme-image">
+                        <img src="" alt="Theme" id="theme-img">
+                    </div>
+                    <div class="result-label">
+                        <span class="label-title">THÉMATIQUE :</span>
+                        <span class="label-value" id="theme-label"></span>
+                    </div>
+                </div>
+                
+                <!-- Requirements -->
+                <div class="result-column requirements-column">
+                    <div class="requirements-text">
+                        <p class="requirements-title">REQUIREMENTS FOR THIS PIECE</p>
+                        <p class="requirements-content" id="requirements-content">
+                            Wool / Molding —<br>
+                            Italian carded wool —<br>
+                            Wet-form molding on mannequin —<br>
+                            Steam-set structural tension —
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Result/Merged Image -->
+                <div class="result-column">
+                    <div class="result-image result-merged" id="result-image">
+                        <div class="result-placeholder">
+                            <span>AI Generated Result</span>
+                            <span class="placeholder-note">(Coming Soon)</span>
+                        </div>
+                    </div>
+                    <div class="result-label">
+                        <span class="label-title">RÉSULTAT</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result-actions">
+                <button class="action-btn" id="regenerate-btn">Generate Another</button>
+                <button class="action-btn secondary" id="restart-btn">Start Over</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
